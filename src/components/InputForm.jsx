@@ -20,17 +20,13 @@ function InputForm({ onAnalyze }) {
     <div className="InputForm">
         
       {/* Text input field */}
-      <input
-        type="text"
-        placeholder="Enter your text here"
+      <input type="text" placeholder="Enter your text here"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
 
       {/* Button to trigger analysis */}
-      <button onClick={handleClick}>
-        Analyze
-      </button>
+      <button onClick={handleClick}>Analyze</button>
     </div>
   );
 }
