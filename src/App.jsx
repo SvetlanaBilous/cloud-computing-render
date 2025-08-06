@@ -19,6 +19,9 @@ function App() {
       return;
     }
     try {
+
+      // Send a POST request to the backend's URL with the input text as JSON
+      // The backend will analyze the sentiment and return the result
       const response = await fetch("https://cloud-computing-backend-open-cloud-computing-task4-backend.2.rahtiapp.fi/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -27,7 +30,7 @@ function App() {
 
       const data = await response.json();
 
-      // Преобразуем результат с маленькой буквы в Capitalized (чтобы сохранить стиль интерфейса)
+      // Convert the result from lowercase to Capitalized (to match the interface style)
       const formatted = data.class.charAt(0).toUpperCase() + data.class.slice(1);
       setSentiment(formatted);
 
